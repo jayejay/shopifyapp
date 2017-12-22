@@ -11,8 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
-Route::get('/products', 'ProductsController@index')->name('products.index');
+Route::get('/', 'ProductsController@index')->name('products.index');
+Route::get('/show/{id}', 'ProductsController@show')->name('products.show');
+Route::post('/update/{id}', 'ProductsController@update')->name('products.update');
+Route::get('/edit/{id}', 'ProductsController@edit')->name('products.edit');
